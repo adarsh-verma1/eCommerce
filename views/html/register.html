@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Register Page</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+		integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="../css/register.css" type="text/css">
+</head>
+
+<body>
+	<div class="container h-100">
+		<div class="d-flex justify-content-center h-100">
+			<div class="user_card">
+				<div class="d-flex justify-content-center">
+					<div class="brand_logo_container">
+						<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAMAAACahl6sAAAAgVBMVEX///8AAAB7e3tHR0ff39+rq6v8/Py7u7sKCgoEBAQeHh4zMzPw8PBDQ0MvLy9jY2PPz8/29vbCwsLV1dWysrIhISG4uLjZ2dlKSkpUVFSUlJSEhITd3d1zc3MVFRXJycmRkZHp6emcnJxra2uHh4eioqIpKSl2dnZbW1s8PDwYGBhYgDYHAAALfklEQVR4nO1dZ5eyOhDeRURAFLB3QSyr//8HXn13k5CQhJQBvOf4fLRABqbPZPL19cEHH3zwwVe6XJyceH2/hgff//72/UN4va9j57RYpl2vTRHe9HJbhd8ShKvbZep1vU4p0oHT82U0EPi97eBN301yvgdqRCAEo/O061Uz8CaFlJvECItJ14snOBYPMyr+aNkfu6bghWgztqHiF+NN1DEZSawo3HXw4y7FZTESLuwwXN82/UHi5lHqeWmUu8mgv7mthwfhX3qLjsjo83kqGMabiYRToskmHvL127jf3uoxZjwyntZhomQd0smWa3GGs6bXzWAyrC5iXiy0TFy6KObVq9zbVMfuukqFk5hcKblVaflxodcrQOqwTOHHFpbgWFF8/rYVT2xyZfn6ZOk0pSeWUa/N81cUM/dcgdxzsmIuWzRsIQe0SxXES6grL2NaJYdNvhTvxojlDvLqyx/66k5jkrKkWXkF7lRMaQYbgj4nghmlXa6DJu6xoDSJ34R59BzqFpuG3ruXUY/LAb9B1KO4qkGb5dJ3AtZebtmzOjTs213KHvI4h7x0Ug4Be6CX5iEvhwehke/Dx6LEt34Gd10xziWj4oOplVnpqnPA5yPDsWR5oZTXpUQHtOyJUWavAEQoT2Vt2GKCkHIjLvbXu5QeDMDldHAqsYL1OynJB5zQqWJAlExgKScLQkfYQb5m+gB6jAl5JPOGPDg5dkR5+Rb60iUP5NpWIM0ugXiRobEhjohfcm3cmouQE0rGhrrfI97bvKP38YJLuGtldgXit4cd0vGUE8LgW5P/z4iYdVyOmRKVY5AeXuJ/B63bDxYDbAQO2rrTI/F5y/acB+ImDXWdJOLowEebBjBezgD/sfcWhWSP+MJa+a4Iq7x51zWxP+R4RaHOinBe1MYvgEWCBb5Q/9MEv8esqXXp46zPXCn2CnpNrkwXWEyuqmKLTfqhMw+LhxxniRQNvItNYRe1SQlwsOqrPWBcVzP00ZoD9mJ/VH6NJd3v1FXkgfCKSqkP+yZZw8syQIbWdq//LXZ6lXVDBV5yOe/juNhnfeD42MP6tN4NxlGhoc/r9dflwsAjBi2hLdB1h3W/7FtK+qnatzWGDAOwvNelh/ALMQqmcn6XTQHneE7x45H/Dr86JQXHwuW0ZPzDCK59ERsH+XtGTzQwkdJU3IK2Nls1B0vkPErdpwTdODa5RyGkoybMjJIXFP0hXMSWMT923036AJayJtNQxly/GkYx9sNSInnYEVKcRipL9kLkr0SLkC9UjPfFEdYG3dVE93viJr+6Z6NHCA7DN8KfIGGttTY8HKV0fPsSFaxHCHaihMvESznpkfCLE2/5JUhkU5MQfCdRHI6Y3DfS+g5v9SVITLEmIViU9/zvPZRjNdK9NbIulXZNQrByDflf40DErK+P7UhjIeFXXUKwDPCVEnqkc10SftEiIV/IM+XzFuIswxxpm4SgDCqXt7B7YpaTE/RlE/TExkmbEMxbPFWIEmBmnFWnfJ8IhLKnTcgXcrMzznf3v+80MpIl9LhrpyFMR+kTguR5VP0qRS6f2Z4B8b4FAuFK9QlBmYWgavKQB2NmDdsmJEU2sSp4yDAbpnv1CCl6FH71xJz+UL4QdL8qu/aE3zRAiNJuJun9tqLn7onflRLqrMgLxEmxJwRLAutUo7iLIz1KyEd1mxD9mNzTnhCsm9hYFmW6jUKRf9iIFvSHsp21JwQHJWzFABl9M8/3hUi+/416QgCEIF5mdR0KhMXhYy3kYkK5WrlL4fdlFvSHNbUAlM9mQ2jkT1pkaqWxrtQ86dsREnQwHlWKbmhTjeZsIMOQOj4mhEToyrTaWv59etBfPsGFR8EfpIkyE0K+UNKGzominK+50voqxcpVyBNlRoSg90/ngJEXbpej3XKJqN6NhREhKJtNB2zI07rprp2CUAPXvGgjQpDBoP+GVKeF9n1BlBKqCQ2MCEH6l1Yj6D1ZVtYjftq0rnRpRAhSLbQ0oPDQtkrGjXiDuiyAESFIP9FBIqqWWjcD3TmECBKCBEaEoGQJXYNDht26R2BadYKlpZF/MCLERZenPkW8bd9Fk7F0BPVejxEh+d/1H9SnSG8C9MvtGToU9IcRIchH8alPESEQ1ddT2Zoobbk1IiTlEoLuC1IQz29I5MaZ0pNJ4hc0d4h46JVTn4IS8sRudtqcFo32rfEJgWStlsBnLUBhbwt8YYdTv62Br37BDGJ74BtEMBelPfBdFCinsUXwnUYgN75N8N14oMCqTfADK5hQt1Ugn472bGCSD79wJ/1s69z2N+e86R8bU+j85ANIOuhppGb7O5uAOIycRgYZ8tNBEAm6fMMLD//BX/fBaeEn6OxTpsmPvEBy2MMa2xxdmPFzLZPYU3aIEQdBASkvqGTFtgVYlRXSus6gP0AOvhCVFWwKPUdRu28VdzD+EhV6LEpvG50RpgeoVnlR6c28GHoTrZkPmIka4mKocXl6L1qxkBKQLbPC8rRpw8BZtF4JJRAuNqpgVAsvwlYCKWai1crgA2yPEbdwGDXV5PKmZRHu1skaLCJVSTBqc6oOnlTD2ZYQxAm8x45eltFWWE0obiQUA1lgniAYtAIKncRa1FYaaiBrBcTbGZQTEDXd8DIYtrdV7syteiO/UTlKVGltEsGo/R4DGS8+9+g2MHs2U6QVdkRKIG9g1m0pNxb1F0z7wpRWiuhU9IDrtifIYTNmqqbJH3OeoiQqxFISGPZOvlC37UJ3I4x6FMKD0UbHX+BePaF+1duaZPdGLMat1C9Tc7PYyVxtzS08YLxZTMw4utv3ckNL4m9tdBYKOCTb9/Q3VCYqjcssYqvAXWVDpckW14Guw7W2HHKltMUVv7ZAY49rZTC3BL71EG38QuTsb7YN3L2pHUByzeyLrYrbwE035nuznzoV9iggzkvBzF9nIsxHJaQz3lEJ6LbOBKYXQXlUAmneNdnZ4/aLOxvGhz1nBpb0xcmOepttP04kP/Yz51bExW27mSWgLQg640RI/JpBLgEGOIumEs688cidndbIHWJx3m4IEnYj1IwDGTX0BoMNy9AdS0U6w99rUJiL9aFqfo/oBs7Gy85AJhyOlfUpSStY5zbhQPL+Gh4CrgmKNwq3jSOui+lkKcnASfOxx7AgAyfnWkEZYa53GwGqyyMkafUWfTakwKebtCiNybVL04KAbILQrxHt3mhwMZlefzBwm95nlHRiNUq6LCaPTobfIyxJhGOYZyVJhS7HlJfGrZu2xb3HAHwSPw+N03rECnV3JAGhw8Y2l8Qs7EROlqVDIqxUTukEkEcHuiuBOraj44NUSqc1BdZHvOJE1/NiLdv40tE2EM1R5c3dtzYPGyo1UMG0RvVLHXLNnyqGAH/8E31+IOSBZTJQB3KBHYFc0l3fQRvRr9fMEWlPNVie4jtqnL1c6tA6ULWfU8cINpzvoo4RHAI/togqS/UadFh2VFlyDb8/gBro4GdNHbV5pgpGFv0RYjCHnzZymvqMqhUdGjqxfUdPcOmBO18JPckOrv+chcc0BP2AnXP8wpRu9QwaPUp7whzZ/AP2VqbMOcfzhnOcEbvDYgVirgbseMR989ufOceaW9YJow07b2vcSsrZ24IeND+pHjR/bsvJdhl+fiK8GXmTx331CIO4zUTHkdNKMy9mWozN7zC4t13IWPDGgvmjrdqew3SwHfF6PoYNmUApZvyReMEwziYS8c8HWTzk72YaNnGMuQoqSpPgMFzfsssicfMo9bw0yt1kccn266F4owaMIjfEtKJyDOHHHWfKn0ZANkNPEdamCAYJR4dqINy/0YCGiSkt4f5t6sYI06x2LisDv5eBus9wSCfbnqLw+6vt5L3H4njLvrOSts3PV05/+RZFbwV4u8HJKdajcfjw/SDw/Uc4Hq0L5zTY/V9I+OCDDz5oFP8Bpv6QK96W0voAAAAASUVORK5CYII="
+							class="brand_logo" alt="Logo">
+					</div>
+				</div>
+				<div class="d-flex justify-content-center form_container">
+					<form method="POST" action="/register">
+						<div class="input-group mb-3">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fas fa-envelope"></i></span>
+							</div>
+							<input type="text" name="name" class="form-control input_user" required="true"
+								placeholder="Name">
+						</div>
+
+						<div class="input-group mb-3">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fas fa-envelope"></i></span>
+							</div>
+							<input type="email" name="email" class="form-control input_user" required="true"
+								placeholder="Email">
+						</div>
+
+						<div class="input-group mb-3">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fas fa-key"></i></span>
+							</div>
+							<input type="password" name="password" class="form-control input_pass" required="true"
+								placeholder="Password">
+						</div>
+
+						<div class="input-group mb-3">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fas fa-key"></i></span>
+							</div>
+							<input type="password" name="confirmPassword" class="form-control input_pass"
+								required="true" placeholder="Confirm Password">
+						</div>
+
+						<div class="d-flex justify-content-center mt-3 login_container">
+							<button type="submit" name="button" class="btn btn-primary">Sign Up</button>
+						</div>
+					</form>
+				</div>
+
+				<div class="mt-4">
+					<div class="d-flex justify-content-center links">
+						Already have an account? <a href="login" class="ml-2">Log In</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

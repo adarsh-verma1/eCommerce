@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Edit Product Page</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+		integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="/css/edit_product.css" type="text/css">
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-lg navbar-light">
+		<span class="navbar-brand"></span>
+		<div class="collapse navbar-collapse justify-content-end" id=" navbarNavAltMarkup">
+			<nav class="nav nav-pills">
+				<a class="nav-item nav-link" id="list" href="/user">Home</a>
+				<a class="nav-item nav-link" id="list" href="/user/add_product">Add Product</a>
+				<a class="nav-item nav-link" id="list" href="/user/my_product">My Product</a>
+				<a class="nav-item nav-link active" id="list">Edit Product</a>
+				<a class="nav-item nav-link" id="list" href="/user/cart">Cart</a>
+				<a class="nav-item nav-link" id="list" href="/user/logout">Log Out</a>
+			</nav>
+		</div>
+	</nav>
+
+	<div class="container h-100">
+		<div class="d-flex justify-content-center h-100">
+			<div class="user_card">
+				<div class="d-flex justify-content-center">
+					<div class="brand_logo_container">
+						<img src="data:image/png;base64,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"
+							class="brand_logo" alt="Logo">
+					</div>
+				</div>
+				<div class="d-flex justify-content-center form_container">
+					<form>
+						<div class="input-group mb-3">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fas fa-file-alt"></i></span>
+							</div>
+							<input type="text" name="name" id="name" class="form-control input_user" required="true"
+								placeholder="Name">
+						</div>
+
+						<div class="input-group mb-3">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fas fa-link"></i></span>
+							</div>
+							<input type="text" name="image_url" id="image_url" class="form-control input_user"
+								required="true" placeholder="Image URL">
+						</div>
+
+						<div class="input-group mb-3">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fas fa-industry"></i></span>
+							</div>
+							<input type="text" name="manufactured_by" id="manufactured_by"
+								class="form-control input_pass" placeholder="Manufactured By">
+						</div>
+
+						<div class="input-group mb-3">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fas fa-rupee-sign"></i></span>
+							</div>
+							<input type="number" min="0" step="any" name="price" id="price"
+								class="form-control input_pass" required="true" placeholder="Price">
+						</div>
+
+						<div class="d-flex justify-content-center mt-3 login_container">
+							<button type="submit" name="button" id="update_button" class="btn btn-primary">Update
+								Product</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="/js/edit_product.js"></script>
+</body>
+
+</html>
