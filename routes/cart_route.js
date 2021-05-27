@@ -35,7 +35,7 @@ route.post('/:id', (req, res) => {
     });
 });
 
-//To delete a product by id fromthe cart of the current user
+//To delete a product by id from the cart of the current user
 route.delete('/:id', (req, res) => {
     if (isProductofUser(req.user.email, req.params.id)) {
         cartController.removeFromCart(req.user.email, req.params.id);
