@@ -16,8 +16,8 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    products: [productSchema],
-    cart: [productSchema]
+    products: [productSchema],      //Contains the product itself
+    cart: [String]                  //Contains the id of the product
 });
 
 mongoose.model(model_name, userSchema);

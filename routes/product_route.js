@@ -5,13 +5,14 @@ const prodController = require('../controllers/product_funcs');
 const userController = require('../controllers/user_funcs');
 const { isProductofUser } = require('./helper_funcs');
 
-//GET
+//To get the list of all products
 route.get('/', (req, res) => {
     prodController.getAll().then((data) => {
         res.json(data);
     });
 });
 
+//To get the list of products added by the current user
 route.get('/myproducts', (req, res) => {
     userController.getUserByEmail(req.user.email).then((user) => {
         if (!user)
@@ -21,15 +22,7 @@ route.get('/myproducts', (req, res) => {
     });
 });
 
-route.get('/cart', (req, res) => {
-    userController.getUserByEmail(req.user.email).then((user) => {
-        if (!user)
-            return res.json({ "ERROR": "User does not exist." });
-        else
-            return res.json(user.cart);
-    });
-});
-
+//To get a product by id
 route.get('/:id', (req, res) => {
     prodController.getById(req.params.id).then((product) => {
         if (!product)
@@ -39,8 +32,7 @@ route.get('/:id', (req, res) => {
     });
 });
 
-
-//POST
+//To add a product by the current user
 route.post('/', (req, res) => {
     prodController.addProduct(req.user.email, req.body).then((product) => {
         userController.addProduct(req.body.email, product).then(() => {
@@ -49,21 +41,7 @@ route.post('/', (req, res) => {
     });
 });
 
-route.post('/cart/:id', async (req, res) => {
-    await prodController.getById(req.params.id).then((product) => {
-        userController.getUserByEmail(req.user.email).then((user) => {
-            if (!user.cart)
-                for (let i = 0; i < user.cart.length; i++) {
-                    if (product._id == user.cart[i]._id)
-                        return res.redirect('/user');
-                }
-            userController.addToCart(req.user.email, product).then(() => {
-                return res.redirect('/user');
-            });
-        });
-    });
-});
-
+//To update a product using the id
 route.post('/:id', async (req, res) => {
     if (isProductofUser(req.user.email, req.params.id)) {
         req.body.email = req.user.email;
@@ -74,28 +52,11 @@ route.post('/:id', async (req, res) => {
     }
 });
 
-
-///DELETE
+//To delete a product using the id
 route.delete('/:id', (req, res) => {
     if (isProductofUser(req.user.email, req.params.id)) {
         prodController.remove(req.params.id);
         userController.removeProduct(req.user.email, req.params.id);
-        userController.getAllUsers().then((users) => {
-            for (let i = 0; i < users.length; i++) {
-                for (let j = 0; j < users[i].cart.length; j++) {
-                    if (users[i].cart[j]._id == req.params.id) {
-                        userController.removeFromCart(users[i].email, req.params.id);
-                    }
-                }
-            }
-        });
-    }
-    return res.send();
-});
-
-route.delete('/cart/:id', (req, res) => {
-    if (isProductofUser(req.user.email, req.params.id)) {
-        userController.removeFromCart(req.user.email, req.params.id);
     }
     return res.send();
 });

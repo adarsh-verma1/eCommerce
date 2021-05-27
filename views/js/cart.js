@@ -1,14 +1,17 @@
 $(() => {
-    const url = "http://localhost:5555/products/cart";
+    const url = "http://localhost:5555/user/cart/items";
     const user_info = "http://localhost:5555/user/info";
 
+    //Getting User Data to display the name
     $.get(user_info).done((data) => {
         let name = $('.navbar-brand');
         name.text(`Hello, ${data}!`);
     });
 
+    //Getting the items in the Cart to display them in Card format
     $.get(url).done((data) => { populateData(data) });
 
+    //Creating card of the items in the Cart
     function createCard(product) {
         let div = $(`<div class="card"></div>`);
         let img = $(`<img class="card-img-top" src=${product.image_url} alt="Card image cap"></img>`);
@@ -17,7 +20,7 @@ $(() => {
                            <p class="card-text">Price: <b>₹ ${product.price}</p>
                         `);
 
-        let deleteButton = $(`<button type = "button" id = "${product._id}" class="btn btn-danger" > Delete</button>`);
+        let deleteButton = $(`<button type = "button" id = "${product._id}" class="btn btn-danger" > Remove from Cart</button>`);
 
         cardBody.append(cardDetails);
         div.append(img);
@@ -27,6 +30,7 @@ $(() => {
         deleteButton.click((event) => {
             event.preventDefault();
 
+            //Removing item confirmation Pop-up
             swal({
                 title: "Are you sure to remove this item from cart?",
                 icon: "warning",
@@ -35,7 +39,7 @@ $(() => {
             }).then((willDelete) => {
                 if (willDelete) {
                     $.ajax({
-                        url: "http://localhost:5555/products/cart/" + product._id,
+                        url: "http://localhost:5555/user/cart/" + product._id,
                         method: 'DELETE',
                     }).done(() => window.location.replace("http://localhost:5555/user/cart"));
                 }

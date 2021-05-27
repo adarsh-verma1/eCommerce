@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 
 const model_name = "product";
+
 const productSchema = new mongoose.Schema({
     email: {
         type: String,

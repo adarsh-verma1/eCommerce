@@ -2,13 +2,16 @@ $(() => {
     const url = "http://localhost:5555/products/myproducts";
     const user_info = "http://localhost:5555/user/info";
 
+    //Getting User Data to display the name
     $.get(user_info).done((data) => {
         let name = $('.navbar-brand');
         name.text(`Hello, ${data}!`);
     });
 
+    //Getting the list of products user has added to display them in Card format
     $.get(url).done((data) => { populateData(data) });
 
+    //Creating card of all the products to display
     function createCard(product) {
         let div = $(`<div class="card"></div>`);
         let img = $(`<img class="card-img-top" src=${product.image_url} alt="Card image cap"></img>`);

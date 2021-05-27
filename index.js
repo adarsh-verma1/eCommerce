@@ -19,6 +19,7 @@ app.use((req, res, next) => {
     next();
 });
 
+//To attach CSS and JS files to HTML
 app.use(express.static(path.join(__dirname, "views")));
 
 app.use(session({
@@ -27,6 +28,7 @@ app.use(session({
     saveUninitialized: true
 }));
 
+//Using passport for User Authentication
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -46,6 +48,7 @@ function connectDB(DB_URL) {
         console.error("Successfully connected to Database");
     });
 
+    //Connecting to DB
     return mongoose.connect(DB_URL, {
         useFindAndModify: false,
         useNewUrlParser: true,
@@ -64,6 +67,7 @@ function connectServer(PORT) {
             return;
         }
 
+        //If no error, then output in console
         console.log(`Server is running at port: ${PORT}`);
     });
 }
